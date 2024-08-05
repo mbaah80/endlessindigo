@@ -131,7 +131,11 @@ ul.slick-dots li.slick-active button{background:#060606;}
 }
 
 @media only screen and (max-width:767px){
-    .slick-prev, .slick-next{ background-size: 50px; width: 50px; height: 50px;}
+    .slick-prev, .slick-next{
+        background-size: 50px;
+        width: 50px;
+        height: 50px;
+    }
     .slick-prev{ left:2px;}
     .slick-next{ right:2px;}
     ul.slick-dots{ margin-top:12px;}
