@@ -27,8 +27,7 @@
     <link rel="preload" href="css/RobotoCondensed-Regular.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="css/RobotoCondensed-Medium.woff2" as="font" type="font/woff2" crossorigin>
 
-    <script type="text/javascript"
-            src="https://www.sf88trk.com/scripts/sdk/everflow.js"></script>
+    <script type="text/javascript" src="https://www.sf88trk.com/scripts/sdk/everflow.js"></script>
 
     <script type="text/javascript">
         EF.click({
@@ -56,7 +55,11 @@
     </script>
     <!-- end -->
 
-
+    <style>
+        .hidden-content-part {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -121,7 +124,7 @@
     </div>
 </div>
 
-<div class="hidden-content-part" style="float: left; width: 100%;">
+<div id="hidden-content-part" class="hidden-content-part" style="float: left; width: 100%;">
     <div class="offer_strip">
 
         <div class="container">
@@ -651,34 +654,34 @@
 
 </div>
 
-<div class="doctor_sec show-mob">
-    <div class="container">
-        <div>
-            <p class="as_seen_on"><span>As Seen On:</span></p>
-            <div class="clearall"></div>
-            <ul class="seen_logo">
-                <li><img src="images/seen-logo1.png" alt="" width="57" height="14"></li>
-                <li><img src="images/seen-logo2.png" alt="" width="60" height="17"></li>
-                <li><img src="images/seen-logo3.png" alt="" width="73" height="16"></li>
-                <li><img src="images/seen-logo4.png" alt="" width="101" height="15"></li>
-            </ul>
-        </div>
-        <div class="doctor_box">
-            <div class="doctor_blk">
-                <div class="doc_imgbox">
-                    <img src="images/doctor-ryan.jpg" class="doctor_ryan" alt="" width="140" height="140">
-                </div>
+<!--<div class="doctor_sec show-mob">-->
+<!--    <div class="container">-->
+<!--        <div>-->
+<!--            <p class="as_seen_on"><span>As Seen On:</span></p>-->
+<!--            <div class="clearall"></div>-->
+<!--            <ul class="seen_logo">-->
+<!--                <li><img src="images/seen-logo1.png" alt="" width="57" height="14"></li>-->
+<!--                <li><img src="images/seen-logo2.png" alt="" width="60" height="17"></li>-->
+<!--                <li><img src="images/seen-logo3.png" alt="" width="73" height="16"></li>-->
+<!--                <li><img src="images/seen-logo4.png" alt="" width="101" height="15"></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--        <div class="doctor_box">-->
+<!--            <div class="doctor_blk">-->
+<!--                <div class="doc_imgbox">-->
+<!--                    <img src="images/doctor-ryan.jpg" class="doctor_ryan" alt="" width="140" height="140">-->
+<!--                </div>-->
 
-                <div class="doc_contbox">
-                    <p class="doctor_name">Dr. Ryan Shelton</p>
-                    <p class="doctor_degnat">Skincare Doctor<br> & Cosmetic Specialist</p>
-                </div>
-            </div>
+<!--                <div class="doc_contbox">-->
+<!--                    <p class="doctor_name">Dr. Ryan Shelton</p>-->
+<!--                    <p class="doctor_degnat">Skincare Doctor<br> & Cosmetic Specialist</p>-->
+<!--                </div>-->
+<!--            </div>-->
 
-            <p class="doctor_desc">Dr. Ryan Shelton is a highly celebrated skincare doctor and cosmetic specialist. He was the lead researcher at the University Compounding Pharmacy in San Diego, California, and the Director of Whole Body Health. His vision in the skin care industry is widely respected for its ability to predict the future of cosmetics, and today in this presentation he shares his biggest breakthrough yet...</p>
-        </div>
-    </div>
-</div>
+<!--            <p class="doctor_desc">Dr. Ryan Shelton is a highly celebrated skincare doctor and cosmetic specialist. He was the lead researcher at the University Compounding Pharmacy in San Diego, California, and the Director of Whole Body Health. His vision in the skin care industry is widely respected for its ability to predict the future of cosmetics, and today in this presentation he shares his biggest breakthrough yet...</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <div class="references_section">
@@ -778,14 +781,56 @@
 <script type="text/javascript" src="js/jquery.psgTimer.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
 
-<script>
+<script type="text/javascript">
     $(document).ready(function(e) {
 
-        setTimeout(function() {
+        const SHOW_TIME_MS = 1758000; // 29 minutes in milliseconds
+        const STORAGE_KEY = 'firstVisitTime';
+        const CONTENT_SHOWN_KEY = 'contentShown';
+        const visitedBefore = 'visitedBefore';
+
+        // Function to display the hidden content
+        function showHiddenContent() {
             $('.hidden-content-part').show();
-            $( ".s2_slider" ).slick("refresh");
-            $( ".sec4_video_block" ).slick("refresh");
-        }, 1758000);
+            $(".s2_slider").slick("refresh");
+            $(".sec4_video_block").slick("refresh");
+            localStorage.setItem(CONTENT_SHOWN_KEY, 'true');
+        }
+
+
+        // Function to set the first visit time in local storage
+        function setFirstVisitTime() {
+            localStorage.setItem(STORAGE_KEY, Date.now());
+            localStorage.setItem(visitedBefore, 'true');
+        }
+
+        // Initialize page logic
+        function initializePage() {
+            const currentTime = Date.now();
+            const storedVisitTime = localStorage.getItem(STORAGE_KEY);
+            const contentShown = localStorage.getItem(CONTENT_SHOWN_KEY);
+            const isVisitedBefore = localStorage.getItem(visitedBefore);
+
+            if (!storedVisitTime) {
+                // If no visit time is stored, set it now
+                setFirstVisitTime();
+            } else if (isVisitedBefore === 'true') {
+                // If the user has visited before and the content has not been shown, show it now
+                const showContent = document.getElementById('hidden-content-part')
+                if (showContent) {
+                    showContent.style.display = 'block';
+                }
+            } else{
+                // If the user has visited before and the content has been shown, check if it's time to show it again
+                const timeSinceLastVisit = currentTime - storedVisitTime;
+                if (timeSinceLastVisit >= SHOW_TIME_MS) {
+                    showHiddenContent();
+                }
+            }
+        }
+
+        // Initialize the page
+        initializePage();
 
 
         $('.s2_slider').slick({
@@ -900,6 +945,7 @@
     });
 
     document.addEventListener('DOMContentLoaded', function () {
+
         var timer = new PsgTimer({
             selector: '#firstTimer',
             currentDateTime: Date.UTC(2020, 0, 26, 1, 0, 0),
@@ -920,6 +966,7 @@
         });
     })
 </script>
+
 <iframe src="https://go.maxweb.com/conversion/iframe/?a=5705&token=87cb3bc19d3033a473f58a1360ca3ab5" height="1" width="1" frameborder="0"></iframe>
 </div>
 </body>
