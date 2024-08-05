@@ -121,7 +121,7 @@
     </div>
 </div>
 
-<div class="hidden-content-part" id="hidden-content-part" style="float: left; width: 100%;">
+<div class="hidden-content-part" style="float: left; width: 100%;">
     <div class="offer_strip">
 
         <div class="container">
@@ -773,54 +773,27 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="js/bookmarkscroll.js"></script>
 <script type="text/javascript" src="js/jquery.psgTimer.js"></script>
 <script type="text/javascript" src="js/slick.js"></script>
 
 <script>
     $(document).ready(function(e) {
-        console.log('Document is ready');
 
-        // Check if the timeout has been set previously
-        const showTime = localStorage.getItem('showTime');
-        const currentTime = new Date().getTime();
-
-        if (showTime && currentTime < showTime) {
-            // If the current time is less than the stored show time, hide the content
-            console.log('Content is hidden');
-            $('.hidden-content-part').hide();
-            // Set a timeout to show the content when the remaining time has passed
-            setTimeout(function() {
-                console.log('Timeout reached, showing hidden content');
-                $('.hidden-content-part').show();
-                $(".s2_slider").slick("refresh");
-                $(".sec4_video_block").slick("refresh");
-                // Remove the show time from localStorage
-                localStorage.removeItem('showTime');
-            }, showTime - currentTime);
-        } else {
-            // If no show time is set or the stored show time has passed, show the content
-            console.log('Content is shown');
-            $('.hidden-content-part').show();
-        }
-
-        // Set a new timeout and store the show time in localStorage
         setTimeout(function() {
-            console.log('Setting new timeout for 29 minutes and 18 seconds');
-            const newShowTime = new Date().getTime() + 1758000;
-            localStorage.setItem('showTime', newShowTime);
             $('.hidden-content-part').show();
-            $(".s2_slider").slick("refresh");
-            $(".sec4_video_block").slick("refresh");
+            $( ".s2_slider" ).slick("refresh");
+            $( ".sec4_video_block" ).slick("refresh");
         }, 1758000);
+
 
         $('.s2_slider').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             dots: true,
             arrows: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed:5000,
             autoplay: false,
             responsive: [
                 {
@@ -829,7 +802,9 @@
                         slidesToShow: 2,
                     }
                 },
+
                 {
+
                     breakpoint: 767,
                     settings: {
                         slidesToShow: 1,
@@ -840,25 +815,27 @@
             ]
         });
 
+
         $('.sec4_video_block').slick({
             dots: false,
             slidesToShow: 3,
             slidesToScroll: 1,
-            autoplaySpeed: 5000,
+            autoplaySpeed:5000,
             autoplay: false,
             arrows: true,
             responsive: [
+
                 {
                     breakpoint: 1021,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow:2,
                     }
                 },
                 {
                     breakpoint: 767,
                     settings: {
-                        autoplay: false,
-                        slidesToShow: 1,
+                        autoplay:false,
+                        slidesToShow:1,
                         variableWidth: true,
                         centerMode: true,
                         arrows: true,
@@ -867,14 +844,15 @@
             ]
         });
 
+
         $('.ing-hdng').click(function(e) {
-            console.log('Clicked on heading');
+
             var thisDiv = $(this).next('.ing-content');
-            if ($(thisDiv).is(":visible")) {
+            if ($(thisDiv).is(":visible")){
                 $(this).next('.ing-content').slideUp();
                 $(this).removeClass('active');
                 $('.s3-ing-dwn').removeClass('s3-ing-dwnNew');
-            } else {
+            }else{
                 $('.ing-content').slideUp();
                 $(this).next('.ing-content').slideDown();
                 $('.ing-hdng').removeClass('active');
@@ -884,22 +862,24 @@
             }
 
             var trg = $(this);
-            window.setTimeout(function() {
+            window.setTimeout(function(){
                 $('html, body').animate({
                     scrollTop: $(trg).offset().top - 15
                 }, 1000);
             }, 700);
+
         });
+
 
         //accordion JS
         $(".acdn-heading").click(function() {
-            console.log('Clicked on accordion heading');
+
             var questionDiv = $(this);
-            var answerDiv = $(this).next('.acdn-content');
+            var answerDiv   = $(this).next('.acdn-content');
             var idx = $('.acdn-content').index(answerDiv);
 
             $('.acdn-content').each(function(index, ansDiv) {
-                if (index != idx && $(ansDiv).is(':visible')) {
+                if(index != idx && $(ansDiv).is(':visible')) {
                     $(ansDiv).slideUp(500, function() {
                         $(ansDiv).prev('.acdn-heading').removeClass('accordion-open');
                     });
@@ -914,11 +894,12 @@
                 questionDiv.addClass('accordion-open');
                 answerDiv.stop().slideDown(500);
             }
+
         });
+
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('DOM content loaded');
+    document.addEventListener('DOMContentLoaded', function () {
         var timer = new PsgTimer({
             selector: '#firstTimer',
             currentDateTime: Date.UTC(2020, 0, 26, 1, 0, 0),
@@ -932,15 +913,13 @@
                 seconds: 'SECS'
             },
             callbacks: {
-                onInit: function() {
-                    console.log('Timer initialized');
+                onInit: function () {
+                    //console.log('Hello world!');
                 }
             }
         });
-    });
+    })
 </script>
-
-
 <iframe src="https://go.maxweb.com/conversion/iframe/?a=5705&token=87cb3bc19d3033a473f58a1360ca3ab5" height="1" width="1" frameborder="0"></iframe>
 </div>
 </body>
