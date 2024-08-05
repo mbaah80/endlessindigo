@@ -1,0 +1,74 @@
+.timer-mid{
+    display: inline-block;
+    vertical-align: middle;
+    margin:25px 0 0 0;
+}
+.timer-mid h3{
+    font-size:20px;
+    line-height:22px;
+    color:#2d2d2d;
+    text-align:center;
+}
+.psgTimer {
+    display: table;
+    margin: 0 auto 0 auto;
+    font-size: 0;
+}
+.psgTimer_numbers>div, .psgTimer_labels>div {
+    display: inline-block;
+    font-size: 0;
+    width: 112px;
+    text-align: center
+}
+.psgTimer_numbers>div {
+    position: relative
+}
+.psgTimer_numbers>div:after {
+    content: ":";
+    line-height: 50px;
+    height: 50px;
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: -4px
+}
+.psgTimer_numbers>div:last-child:after {
+    content: none
+}
+.psgTimer_numbers>div>div {
+    display: inline-block;
+    vertical-align: top;
+    width: 38px;
+    height: 50px;
+    line-height: 50px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 34px;
+    text-align: center;
+    font-weight: 800;
+    color: #000;
+}
+.psgTimer_numbers>div>div:first-child {
+    margin-right: 8px
+}
+.psgTimer_labels>div {
+    font-size: 13px;
+    line-height: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top:14px;
+}
+
+@media only screen and (max-width:767px){
+    .timer-mid{transform:none; margin:18px 0 0 0;}
+    .psgTimer_labels>div{ font-size:11px; margin-top:9px;}
+    .psgTimer_numbers>div>div{ width: 30px; height: 35px; font-size: 24px; line-height: 35px;}
+    .psgTimer_numbers>div>div:first-child{ margin-right: 5px;}
+    .psgTimer_numbers>div:after{ height: 35px; line-height:35px;}
+    .psgTimer_numbers>div, .psgTimer_labels>div{ width:90px;}
+
+}
