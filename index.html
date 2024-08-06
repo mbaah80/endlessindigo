@@ -260,7 +260,7 @@
                 <div class="s2_slide">
                     <img src="images/s2-beaftr-img5.jpg" alt="" width="374" height="327">
                 </div>
-                
+
             </div>
 
         </div>
@@ -762,7 +762,7 @@
 <script type="text/javascript">
     $(document).ready(function(e) {
 
-        const SHOW_TIME_MS = 1758000; // 29 minutes in milliseconds
+        const SHOW_TIME_MS = 100000; // 10 seconds
         const STORAGE_KEY = 'firstVisitTime';
         const CONTENT_SHOWN_KEY = 'contentShown';
         const visitedBefore = 'visitedBefore';
@@ -792,17 +792,18 @@
             if (!storedVisitTime) {
                 // If no visit time is stored, set it now
                 setFirstVisitTime();
-            } else if (isVisitedBefore === 'true') {
+                setTimeout(()=>{
+                    const showContent = document.getElementById('hidden-content-part')
+                    if (showContent) {
+                        showContent.style.display = 'block';
+                    }
+                }, SHOW_TIME_MS);
+
+            } else  {
                 // If the user has visited before and the content has not been shown, show it now
                 const showContent = document.getElementById('hidden-content-part')
                 if (showContent) {
                     showContent.style.display = 'block';
-                }
-            } else{
-                // If the user has visited before and the content has been shown, check if it's time to show it again
-                const timeSinceLastVisit = currentTime - storedVisitTime;
-                if (timeSinceLastVisit >= SHOW_TIME_MS) {
-                    showHiddenContent();
                 }
             }
         }
