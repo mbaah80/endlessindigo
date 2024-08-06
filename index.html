@@ -762,7 +762,7 @@
 <script type="text/javascript">
     $(document).ready(function(e) {
 
-        const SHOW_TIME_MS = 100000; // 10 seconds
+        const SHOW_TIME_MS = 1560000; // 26 minutes
         const STORAGE_KEY = 'firstVisitTime';
         const CONTENT_SHOWN_KEY = 'contentShown';
         const visitedBefore = 'visitedBefore';
@@ -792,18 +792,15 @@
             if (!storedVisitTime) {
                 // If no visit time is stored, set it now
                 setFirstVisitTime();
-                setTimeout(()=>{
-                    const showContent = document.getElementById('hidden-content-part')
-                    if (showContent) {
-                        showContent.style.display = 'block';
-                    }
-                }, SHOW_TIME_MS);
+                setTimeout(showHiddenContent, SHOW_TIME_MS);
 
             } else  {
-                // If the user has visited before and the content has not been shown, show it now
-                const showContent = document.getElementById('hidden-content-part')
-                if (showContent) {
-                    showContent.style.display = 'block';
+                const hiddenContent = document.querySelector('.hidden-content-part');
+                if (isVisitedBefore === 'true') {
+                    hiddenContent.style.display = 'block';
+                } else {
+                    setFirstVisitTime();
+                    setTimeout(showHiddenContent, SHOW_TIME_MS);
                 }
             }
         }
