@@ -1287,6 +1287,7 @@ CSS FOR FOOTER
 .fl{ float:left;}
 .fr{ float:right;}
 
+
 @media only screen and (max-width:1400px){
     .s3_prod_img{ width: 690px; top:330px;}
 }
