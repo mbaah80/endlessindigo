@@ -176,6 +176,13 @@ a.header_call{
     float:left;
     width:60%;
 }
+.bnr_contain_center{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .bnr_center{
     width:50%;
     display: -webkit-flex;
@@ -765,7 +772,7 @@ ul.seen_logo li img{
     float:left;
     width:100%;
     background:#fff;
-    padding:60px 0 140px;
+    padding:60px 0 70px;
     overflow:hidden;
     position:relative;
 }
@@ -1358,7 +1365,11 @@ CSS FOR FOOTER
     .common_heading{ font-size: 40px; line-height: 48px;}
     .s2_slider{ margin: 40px auto 0;}
 
-    .section_3{ padding:50px 0 100%; position:relative;}
+    .section_3{
+        padding:50px 0 100%;
+        position:relative;
+        height: fit-content;
+    }
     .s3-mdl{ margin-top:25px;}
     .s3-left{ width:100%;}
     .s3_prod_img{ max-width: 88%; width:auto; margin:0; right:0; top:auto; bottom:0;}
@@ -1455,7 +1466,7 @@ CSS FOR FOOTER
     .s2_slider{ margin: 20px auto 0; width:calc(100% + 30px); margin-left:-15px;}
     .s2_slide{ float:left !important; width: 280px !important;}
 
-    .section_3{ padding: 25px 0 100%; position:relative;}
+    .section_3{ padding: 25px 0 40px;}
     .s3-left{ margin-top:10px;}
     .s3-ing-dwn{ margin-top:5px;}
     .s3-ing-dwnNew{ padding: 10px 17px 20px;}
