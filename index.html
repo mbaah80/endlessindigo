@@ -63,6 +63,12 @@
         .hidden-content-part {
             display: none;
         }
+        #vidalytics_embed_IFaYOTFLq2NBLzXy {
+            width: 100%;
+            height: 300px; /* Set the desired height here */
+            position: relative;
+            object-fit: contain;
+        }
     </style>
 </head>
 
@@ -80,38 +86,25 @@
     </div>
     <div class="banner_section">
         <div class="container">
-            <h3 class="bnr_heading">Use This Simple Trick To <br class="hide-mob">"ERASE <br class="show-mob">WRINKLES"
-                While You Sleep</h3>
+            <h3 class="bnr_heading">Use This Simple Trick To <br class="hide-mob">"ERASE <br class="show-mob">WRINKLES" While You Sleep</h3>
 
             <div class="bnr_block">
                 <div class="bnr_center">
-                    <div style="width: 100%; height: 500px ">
-                        <iframe
-                            src="https://player.vimeo.com/video/946437579?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                            allowfullscreen title="Endless Indigo" style="width: 100%; height: 100%;"></iframe>
+                    <div class="bnr_video_box">
+                        <div id="vidalytics_embed_IFaYOTFLq2NBLzXy" style="width: 100%; height: 300px; position:relative; object-fit: contain"></div>
+                        <script type="text/javascript">
+                            (function (v, i, d, a, l, y, t, c, s) {
+                                y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+                                if (!vsl){vsl=function(u,cb){
+                                    if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+                                    if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+                                    i.getElementsByTagName("head")[0].appendChild(s);
+                                };}
+                                vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+                            })(window, document, 'Vidalytics', 'vidalytics_embed_IFaYOTFLq2NBLzXy', 'https://fast.vidalytics.com/embeds/hWyledk_/IFaYOTFLq2NBLzXy/');
+                        </script>
                     </div>
                 </div>
-
-                <!--            <div class="bnr_right">-->
-                <!--                <div class="hide-mob">-->
-                <!--                    <p class="as_seen_on"><span>As Seen On:</span></p>-->
-                <!--                    <div class="clearall"></div>-->
-                <!--                    <ul class="seen_logo">-->
-                <!--                        <li><img src="images/seen-logo1.png" alt="" width="57" height="14"></li>-->
-                <!--                        <li><img src="images/seen-logo2.png" alt="" width="60" height="17"></li>-->
-                <!--                        <li><img src="images/seen-logo3.png" alt="" width="73" height="16"></li>-->
-                <!--                        <li><img src="images/seen-logo4.png" alt="" width="101" height="15"></li>-->
-                <!--                    </ul>-->
-                <!--                </div>-->
-
-                <!--                <div class="doctor_box hide-mob">-->
-                <!--                    <img src="images/doctor-ryan.jpg" class="doctor_ryan" alt="" width="140" height="140">-->
-                <!--                    <p class="doctor_name">Dr. Ryan Shelton</p>-->
-                <!--                    <p class="doctor_degnat">Skincare Doctor & Cosmetic Specialist</p>-->
-                <!--                    <p class="doctor_desc">Dr. Ryan Shelton is a highly celebrated skincare doctor and cosmetic specialist. He was the lead researcher at the University Compounding Pharmacy in San Diego, California, and the Director of Whole Body Health. His vision in the skin care industry is widely respected for its ability to predict the future of cosmetics, and today in this presentation he shares his biggest breakthrough yet...</p>-->
-                <!--                </div>-->
-                <!--            </div>-->
             </div>
 
         </div>
@@ -142,7 +135,7 @@
                     <div class="pck-bx pck-bx1">
                         <a href="https://google.com" target="_blank">
                             <div class="mob-pck-lft">
-                                <p class="btl-qty">1 Jar</p>
+                                <p class="btl-qty">1 Bottle</p>
                                 <p class="save-tx"><span>you save 25%</span></p>
 
                                 <div class="pck-prd">
@@ -152,7 +145,7 @@
                             </div>
 
                             <div class="mob-pck-rgt">
-                                <p class="pck-prc hide-mob">$59<br><span>Per Jar</span></p>
+                                <p class="pck-prc hide-mob">$59<br><span>Per Bottle</span></p>
                                 <p class="pck-prc show-mob">$59<span>/each</span></p>
                                 <p class="rtlprc"><span>$90.95</span>$59</p>
                                 <p class="freeshpng">$9.95 Shipping</p>
@@ -163,8 +156,10 @@
                                         height="19">180 Day Money Back Guarantee</p>
 
                             </div>
-                            <p class="pck-grnty show-mob"><img src="images/pck-granty-seal.png" alt="" width="15"
-                                    height="19">180 Day Money Back Guarantee</p>
+                            <p class="pck-grnty show-mob">
+                                <img src="images/pck-granty-seal.png" alt="" width="15"
+                                    height="19">180 Day Money Back Guarantee
+                            </p>
                         </a>
                     </div>
 
@@ -172,17 +167,16 @@
                         <a href="https://google.com" target="_blank">
                             <div class="mob-pck-lft">
                                 <div class="popular-tag"><span>MOST<br>POPULAR</span></div>
-                                <p class="btl-qty">3 Jars</p>
+                                <p class="btl-qty">3 Bottles</p>
                                 <p class="save-tx"><span>you save 51%</span></p>
                                 <div class="pck-prd">
-                                    <img src="images/pck-prd-img3.png" alt="" class="pck-prd-img" width="297"
+                                    <img src="images/pck-prd-img2.png" alt="" class="pck-prd-img" width="297"
                                         height="166">
-                                    <img src="images/pck-book.png" alt="" class="pck-book" width="186" height="178">
                                 </div>
                             </div>
 
                             <div class="mob-pck-rgt">
-                                <p class="pck-prc hide-mob">$39<br><span>Per Jar</span></p>
+                                <p class="pck-prc hide-mob">$39<br><span>Per Bottle</span></p>
                                 <p class="pck-prc show-mob">$39<span>/each</span></p>
                                 <div class="pck-ebooks"><img src="images/free-thik.png" alt="" width="20" height="20">2
                                     FREE EBookS</div>
@@ -203,17 +197,16 @@
                     <div class="pck-bx pck-bx3">
                         <a href="https://google.com" target="_blank">
                             <div class="mob-pck-lft">
-                                <p class="btl-qty">2 Jars</p>
+                                <p class="btl-qty">2 Bottles</p>
                                 <p class="save-tx"><span>you save 38%</span></p>
                                 <div class="pck-prd">
-                                    <img src="images/pck-prd-img2.png" alt="" class="pck-prd-img" width="297"
+                                    <img src="images/pck-prd-img3.png" alt="" class="pck-prd-img" width="297"
                                         height="166">
-                                    <img src="images/pck-book.png" alt="" class="pck-book" width="186" height="178">
                                 </div>
                             </div>
 
                             <div class="mob-pck-rgt">
-                                <p class="pck-prc hide-mob">$49<br><span>Per Jar</span></p>
+                                <p class="pck-prc hide-mob">$49<br><span>Per Bottle</span></p>
                                 <p class="pck-prc show-mob">$49<span>/each</span></p>
                                 <div class="pck-ebooks"><img src="images/free-thik.png" alt="" width="20" height="20">2
                                     FREE EBookS</div>
@@ -399,28 +392,46 @@
 
                 <div class="sec4_video_block">
                     <div class="s4_vdobox">
-                        <iframe
-                            src="https://player.vimeo.com/video/995455366?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            preload="auto" allow="autoplay" border="0"></iframe>
+                        <div id="nnWffaaCNc5Ler22" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                        <script type="text/javascript">
+                            (function (v, i, d, a, l, y, t, c, s) {
+                                y='_'+d.toLowerCase();if(!v[y]){v[y]={}}if(!v[y].embeds){v[y].embeds={}}
+                                t=function(){if(v[d]&&v[d].Embed){var ve=v[d].Embed;c=new ve();c.run(a);c.loadCss();}else{setTimeout(t,1000)}};s=new XMLHttpRequest();s.open("GET",l+'?ac='+(new Date()).getTime(),true);
+                                s.onreadystatechange=function(){if(s.readyState==4){if((s.status==200||s.status==304)){var sd=JSON.parse(s.responseText);v[y].embeds[a]={type:"video",options: sd};t();}}};s.send();
+                            })(window, document, 'Vidalytics', 'nnWffaaCNc5Ler22', 'https://fast.vidalytics.com/embeds/hWyledk_/nnWffaaCNc5Ler22/player.settings.json');
+                        </script>
                     </div>
 
                     <div class="s4_vdobox">
-                        <iframe
-                            src="https://player.vimeo.com/video/995457948?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            preload="auto" allow="autoplay" border="0"></iframe>
+                        <div id="QZdWyVz5Ja8wkUzp" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                        <script type="text/javascript">
+                            (function (v, i, d, a, l, y, t, c, s) {
+                                y='_'+d.toLowerCase();if(!v[y]){v[y]={}}if(!v[y].embeds){v[y].embeds={}}
+                                t=function(){if(v[d]&&v[d].Embed){var ve=v[d].Embed;c=new ve();c.run(a);c.loadCss();}else{setTimeout(t,1000)}};s=new XMLHttpRequest();s.open("GET",l+'?ac='+(new Date()).getTime(),true);
+                                s.onreadystatechange=function(){if(s.readyState==4){if((s.status==200||s.status==304)){var sd=JSON.parse(s.responseText);v[y].embeds[a]={type:"video",options: sd};t();}}};s.send();
+                            })(window, document, 'Vidalytics', 'QZdWyVz5Ja8wkUzp', 'https://fast.vidalytics.com/embeds/hWyledk_/QZdWyVz5Ja8wkUzp/player.settings.json');
+                        </script>
                     </div>
 
                     <div class="s4_vdobox">
-                        <iframe
-                            src="https://player.vimeo.com/video/995459927?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            preload="auto" allow="autoplay" border="0"></iframe>
-
+                        <div id="g5FN9Z2cRMs6hHRo" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                        <script type="text/javascript">
+                            (function (v, i, d, a, l, y, t, c, s) {
+                                y='_'+d.toLowerCase();if(!v[y]){v[y]={}}if(!v[y].embeds){v[y].embeds={}}
+                                t=function(){if(v[d]&&v[d].Embed){var ve=v[d].Embed;c=new ve();c.run(a);c.loadCss();}else{setTimeout(t,1000)}};s=new XMLHttpRequest();s.open("GET",l+'?ac='+(new Date()).getTime(),true);
+                                s.onreadystatechange=function(){if(s.readyState==4){if((s.status==200||s.status==304)){var sd=JSON.parse(s.responseText);v[y].embeds[a]={type:"video",options: sd};t();}}};s.send();
+                            })(window, document, 'Vidalytics', 'g5FN9Z2cRMs6hHRo', 'https://fast.vidalytics.com/embeds/hWyledk_/g5FN9Z2cRMs6hHRo/player.settings.json');
+                        </script>
                     </div>
                     <div class="s4_vdobox">
-                        <iframe
-                            src="https://player.vimeo.com/video/995554771?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            preload="auto" allow="autoplay" border="0"></iframe>
-
+                        <div id="Qo9Oo5JT7D3fxZ9H" style="width: 100%; position:relative; padding-top: 177.78%;"></div>
+                        <script type="text/javascript">
+                            (function (v, i, d, a, l, y, t, c, s) {
+                                y='_'+d.toLowerCase();if(!v[y]){v[y]={}}if(!v[y].embeds){v[y].embeds={}}
+                                t=function(){if(v[d]&&v[d].Embed){var ve=v[d].Embed;c=new ve();c.run(a);c.loadCss();}else{setTimeout(t,1000)}};s=new XMLHttpRequest();s.open("GET",l+'?ac='+(new Date()).getTime(),true);
+                                s.onreadystatechange=function(){if(s.readyState==4){if((s.status==200||s.status==304)){var sd=JSON.parse(s.responseText);v[y].embeds[a]={type:"video",options: sd};t();}}};s.send();
+                            })(window, document, 'Vidalytics', 'Qo9Oo5JT7D3fxZ9H', 'https://fast.vidalytics.com/embeds/hWyledk_/Qo9Oo5JT7D3fxZ9H/player.settings.json');
+                        </script>
                     </div>
 
                 </div>
@@ -2943,7 +2954,7 @@
                         <div class="pck-bx pck-bx1">
                             <a href="https://google.com" target="_blank">
                                 <div class="mob-pck-lft">
-                                    <p class="btl-qty">1 Jar</p>
+                                    <p class="btl-qty">1 Bottle</p>
                                     <p class="save-tx"><span>you save 25%</span></p>
 
                                     <div class="pck-prd">
@@ -2953,7 +2964,7 @@
                                 </div>
 
                                 <div class="mob-pck-rgt">
-                                    <p class="pck-prc hide-mob">$59<br><span>Per Jar</span></p>
+                                    <p class="pck-prc hide-mob">$59<br><span>Per Bottle</span></p>
                                     <p class="pck-prc show-mob">$59<span>/each</span></p>
                                     <p class="rtlprc"><span>$90.95</span>$59</p>
                                     <p class="freeshpng">$9.95 Shipping</p>
@@ -2973,17 +2984,16 @@
                             <a href="https://google.com" target="_blank">
                                 <div class="mob-pck-lft">
                                     <div class="popular-tag"><span>MOST<br>POPULAR</span></div>
-                                    <p class="btl-qty">3 Jars</p>
+                                    <p class="btl-qty">3 Bottles</p>
                                     <p class="save-tx"><span>you save 51%</span></p>
                                     <div class="pck-prd">
-                                        <img src="images/pck-prd-img3.png" alt="" class="pck-prd-img" width="297"
+                                        <img src="images/pck-prd-img2.png" alt="" class="pck-prd-img" width="297"
                                             height="166">
-                                        <img src="images/pck-book.png" alt="" class="pck-book" width="186" height="178">
                                     </div>
                                 </div>
 
                                 <div class="mob-pck-rgt">
-                                    <p class="pck-prc hide-mob">$39<br><span>Per Jar</span></p>
+                                    <p class="pck-prc hide-mob">$39<br><span>Per Bottle</span></p>
                                     <p class="pck-prc show-mob">$39<span>/each</span></p>
                                     <div class="pck-ebooks"><img src="images/free-thik.png" alt="" width="20"
                                             height="20">2 FREE EBookS</div>
@@ -3004,17 +3014,16 @@
                         <div class="pck-bx pck-bx3">
                             <a href="https://google.com" target="_blank">
                                 <div class="mob-pck-lft">
-                                    <p class="btl-qty">2 Jars</p>
+                                    <p class="btl-qty">2 Bottles</p>
                                     <p class="save-tx"><span>you save 38%</span></p>
                                     <div class="pck-prd">
-                                        <img src="images/pck-prd-img2.png" alt="" class="pck-prd-img" width="297"
+                                        <img src="images/pck-prd-img3.png" alt="" class="pck-prd-img" width="297"
                                             height="166">
-                                        <img src="images/pck-book.png" alt="" class="pck-book" width="186" height="178">
                                     </div>
                                 </div>
 
                                 <div class="mob-pck-rgt">
-                                    <p class="pck-prc hide-mob">$49<br><span>Per Jar</span></p>
+                                    <p class="pck-prc hide-mob">$49<br><span>Per Bottle</span></p>
                                     <p class="pck-prc show-mob">$49<span>/each</span></p>
                                     <div class="pck-ebooks"><img src="images/free-thik.png" alt="" width="20"
                                             height="20">2 FREE EBookS</div>
